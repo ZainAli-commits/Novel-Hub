@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support - Novel Hub</title>
+    <link rel="stylesheet" href="Support.css">
+</head>
+<body>
+<header class="top-header">
+  <div class="logo-area">
+    <img src="unnamed.webp" alt="Novel Hub Logo" class="logo">
+    <h1>Novel-Hub</h1>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search...">
+    <button onclick="searchFunction()">Search</button>
+  </div>
+  <nav class="nav-buttons">
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="location.href='Novels.html'">Novels</button>
+    <button onclick="location.href='Writers.html'">Writers</button>
+    <button class="active-nav">Support</button>
+     <button onclick="location.href='contact.html'">Contact</button>
+  </nav>
+</header>
+<div class="report-section">
+    <div class="report-card">
+        <h2>Submit a Report</h2>
+        <p>Help Writers to improve the experience.</p>
+        <form action="https://formsubmit.co/zainali65115@gmail.com" method="POST">
+            <div class="input-group">
+                <label>Your Name</label>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="input-group">
+                <label>Report Type</label>
+                <select name="type">
+                    <option>Story Feedback</option>
+                    <option>Typo/Grammar</option>
+                    <option>Site Bug</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="input-group">
+                <label>Details</label>
+                <textarea name="message" rows="4" placeholder="Describe the issue..." required></textarea>
+            </div>
+            <button type="submit" class="send-btn">Send Message</button>
+        </form>
+    </div>
+</div>
+<script>
+function searchFunction() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  alert("Searching for: " + input + "\n(Redirecting to Novels...)");
+  location.href = 'Novels.html';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Novel Library</title>
+  <link rel="stylesheet" href="index.css"> 
+</head>
+<body class="home">
+<header class="top-header">
+  <div class="logo-area">
+    <img src="unnamed.webp" alt="Novel Hub Logo" class="logo">
+    <h1>Novel-Hub</h1>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search novels...">
+    <button onclick="searchNovel()">Search</button>
+  </div>
+  <nav class="nav-buttons">
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="location.href='Novels.html'">Novels</button>
+    <button onclick="location.href='Writers.html'">Writers</button>
+    <button onclick="location.href='support.html'">Support</button>
+     <button onclick="location.href='contact.html'">Contact</button>
+  </nav>
+</header>
+<div class="hero-slider">
+  <div class="slider-track">
+    <div class="slide">
+      <img src="cover4.webp" alt="Love Or????">
+      <div class="slide-info">
+        <h2>Love Or????</h2>
+        <p>A thrilling journey of mystery and heart.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="cover3.webp" alt="Whispers of Ink">
+      <div class="slide-info">
+        <h2>Whispers of Ink</h2>
+        <p>Discover the secrets hidden within the pages.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="cover1.webp" alt="Echoes of Midnight">
+      <div class="slide-info">
+        <h2>Echoes of Midnight</h2>
+        <p>When the clock strikes twelve, the truth begins.</p>
+      </div>
+    </div>
+    <div class="slide">
+      <img src="cover4.webp" alt="Love Or????">
+      <div class="slide-info">
+        <h2>Love Or????</h2>
+        <p>A thrilling journey of mystery and heart.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="novel-section" data-title="Love Or????">
+  <img class="novel-cover" src="cover4.webp" loading="lazy" alt="محبت یا؟؟؟؟">
+  <div class="novel-info">
+    <h2>Love Or????</h2>
+    <div class="buttons">
+      <button onclick="location.href='writer3.html'">About Writer</button>
+      <button onclick="location.href='novel1.1.3.html'">Chapters</button>
+      <button onclick="location.href='character3.html'">Characters</button>
+      <button onclick="location.href='place3.html'">Places</button>
+    </div>
+  </div>
+</div>
+<div class="novel-section" data-title="Whispers of Ink">
+  <img class="novel-cover" src="cover3.webp" loading="lazy" alt="Whispers of Ink">
+  <div class="novel-info">
+    <h2>Whispers of Ink</h2>
+    <div class="buttons">
+      <button onclick="location.href='writer1.html'">About Writer</button>
+      <button onclick="location.href='novel1.html'">Chapters</button>
+      <button onclick="location.href='character1.html'">Characters</button>
+      <button onclick="location.href='place1.html'">Places</button>
+    </div>
+  </div>
+</div>
+<div class="novel-section" data-title="Echoes of Midnight">
+  <img class="novel-cover" src="cover1.webp" loading="lazy" alt="Echoes of Midnight">
+  <div class="novel-info">
+    <h2>Echoes of Midnight</h2>
+    <div class="buttons">
+      <button onclick="location.href='writer2.html'">About Writer</button>
+      <button onclick="location.href='novel1.2.html'">Chapters</button>
+      <button onclick="location.href='character2.html'">Characters</button>
+      <button onclick="location.href='place2.html'">Places</button>
+    </div>
+  </div>
+</div>
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img src="unnamed.webp" alt="Novel Hub Logo" class="footer-logo">
+      <h2>Novel Hub</h2>
+    </div>
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <a href="index.html">Home</a>
+      <a href="novels.html">Novels</a>
+      <a href="writers.html">Writers</a>
+      <a href="support.html">Support</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 <span>Novel-Hub</span>. All rights reserved.</p>
+  </div>
+</footer>
+<script>
+function searchNovel() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let novels = document.querySelectorAll(".novel-section");
+  novels.forEach(function(novel) {
+    let title = novel.getAttribute("data-title").toLowerCase();
+    if (title.includes(input)) {
+      novel.style.display = "flex";
+    } else {
+      novel.style.display = "none";
+    }
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Novels - Library</title>
+    <link rel="stylesheet" href="Novels.css">
+</head>
+<body>
+<header class="top-header">
+  <div class="logo-area">
+    <img src="unnamed.webp" alt="Novel Hub Logo" class="logo">
+    <h1>Novel-Hub</h1>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search novels...">
+    <button onclick="searchNovel()">Search</button>
+  </div>
+  <nav class="nav-buttons">
+    <button onclick="location.href='index.html'">Home</button>
+    <button class="active-nav">Novels</button>
+    <button onclick="location.href='Writers.html'">Writers</button>
+    <button onclick="location.href='Support.html'">Support</button>
+     <button onclick="location.href='contact.html'">Contact</button>
+  </nav>
+</header>
+<div class="content-container">
+    <h1>Explore Our Stories</h1>
+    <div class="novel-grid">
+      
+        <div class="novel-card">
+            <img src="cover4.webp" alt="Love Or????" class="card-image">
+            <div class="card-details">
+                <div>
+                    <span class="genre-tag">FICTION</span>
+                    <h2>Love Or????</h2>
+                    <p>"A shadowy figure, unseen yet aware of every flaw, bending each weakness to serve their hidden design."</p>
+                </div>
+                <a href="novel1.1.3.html" class="read-btn">Start Reading</a>
+            </div>
+        </div>
+
+        <div class="novel-card">
+            <img src="cover3.webp" alt="Whispers of Ink" class="card-image">
+            <div class="card-details">
+                <div>
+                    <span class="genre-tag">FANTASY</span>
+                    <h2>Whispers of Ink</h2>
+                    <p>A gripping tale of hidden secrets and the power of written magic in a crumbling empire.</p>
+                </div>
+                <a href="novel1.html" class="read-btn">Start Reading</a>
+            </div>
+        </div>
+
+        <div class="novel-card">
+            <img src="cover1.webp" alt="Echoes of Midnight" class="card-image">
+            <div class="card-details">
+                <div>
+                    <span class="genre-tag">MYSTERY</span>
+                    <h2>Echoes of Midnight</h2>
+                    <p>When the clock strikes twelve, the city reveals its darkest truths. Will you listen?</p>
+                </div>
+                <a href="novel1.2.html" class="read-btn">Start Reading</a>
+            </div>
+        </div>
+         
+    </div>
+</div>
+<script>
+function searchNovel() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let novels = document.querySelectorAll(".novel-card");
+  novels.forEach(function(novel) {
+    let title = novel.querySelector("h2").innerText.toLowerCase();
+    if (title.includes(input)) {
+      novel.style.display = "flex";
+    } else {
+      novel.style.display = "none";
+    }
+  });
+}
+</script>
+</body>
+</html>
