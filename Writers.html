@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writers - Meet the Authors</title>
+    <link rel="stylesheet" href="Writers.css">
+</head>
+<body>
+<header class="top-header">
+  <div class="logo-area">
+    <img src="unnamed.webp" alt="Novel Hub Logo" class="logo">
+    <h1>Novel-Hub</h1>
+  </div>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search writers...">
+    <button onclick="searchWriter()">Search</button>
+  </div>
+  <nav class="nav-buttons">
+    <button onclick="location.href='index.html'">Home</button>
+    <button onclick="location.href='Novels.html'">Novels</button>
+    <button class="active-nav">Writers</button>
+    <button onclick="location.href='Support.html'">Support</button>
+    <button onclick="location.href='contact.html'">Contact</button>
+  </nav>
+</header>
+<div class="container">
+    <h1>Meet Our Authors</h1>
+    <div class="writer-card">
+        <img src="essa.webp" alt="Essa Rajpoot" class="writer-img">
+        <div class="writer-info">
+            <h2>Essa Rajpoot</h2>
+            <p>Essa Rajpoot is a storyteller drawn to emotional intensity and layered human conflicts. With a passion for exploring love, power, and identity, he brings a dramatic depth to his writing.</p>
+            <span class="works-label">PUBLISHED NOVELS</span>
+            <a href="novel1.1.3.html" class="writer-tag">📖 Love Or?????</a>
+        </div>
+    </div>
+
+    <div class="writer-card">
+        <img src="Aariz.webp" alt="Azriz Haleem" class="writer-img">
+        <div class="writer-info">
+            <h2>Azriz Haleem</h2>
+            <p>Azriz is a master of atmosphere and mystery. With a passion for intricate world-building, he brings a deep, poetic sense to his writing, as seen in his latest work, "Whispers of Ink."</p>
+            <span class="works-label">PUBLISHED NOVELS</span>
+            <a href="novel1.html" class="writer-tag">📖 Whispers of Ink</a>
+        </div>
+    </div>
+
+    <div class="writer-card">
+        <img src="rayan.webp" alt="Rayan Siddiq" class="writer-img">
+        <div class="writer-info">
+            <h2>Rayan Siddiq</h2>
+            <p>Rayan specializes in fast-paced narratives and complex character arcs. His unique voice focuses on themes of destiny and survival, capturing readers' imaginations.</p>
+            <span class="works-label">PUBLISHED NOVELS</span>
+            <a href="novel1.2.html" class="writer-tag">📖 Echoes of Midnight</a>
+        </div>
+    </div>
+</div>
+<script>
+function searchWriter() {
+  let input = document.getElementById("searchInput").value.toLowerCase();
+  let writers = document.querySelectorAll(".writer-card");
+  writers.forEach(function(writer) {
+    let name = writer.querySelector("h2").innerText.toLowerCase();
+    if (name.includes(input)) {
+      writer.style.display = "flex";
+    } else {
+      writer.style.display = "none";
+    }
+  });
+}
+</script>
+</body>
+</html>
